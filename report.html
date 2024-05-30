@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="flashcardsApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards Summary Report</title>
+</head>
+
+<body ng-controller="ReportController as vm">
+    <h1>Flashcards Summary Report</h1>
+    <div ng-repeat="flashcard in vm.flashcards">
+        <div>{{ flashcard.title }}</div>
+        <div>Viewed: {{ flashcard.counts.viewed }}</div>
+        <div>Incorrect: {{ flashcard.counts.incorrect }}</div>
+        <div>Revisit: {{ flashcard.counts.revisit }}</div>
+        <div>Correct: {{ flashcard.counts.correct }}</div>
+        <div>Percent Incorrect: {{ vm.calculatePercentIncorrect(flashcard) }}%</div>
+        <div>Percent Revisit: {{ vm.calculatePercentRevisit(flashcard) }}%</div>
+        <div>Percent Correct: {{ vm.calculatePercentCorrect(flashcard) }}%</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="flashcardsApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Notes/Flash Cards</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+    <div class="container" ng-controller="FlashcardsController as vm">
+        <ul class="nav nav-tabs">
+            <li role="presentation" ng-class="{active: vm.activeTab === 'flashcards'}">
+                <a href="#" ng-click="vm.setActiveTab('flashcards')">Flashcards</a>
+            </li>
+            <li role="presentation" ng-class="{active: vm.activeTab === 'reports'}">
+                <a href="#" ng-click="vm.setActiveTab('reports')">Reports</a>
+            </li>
+        </ul>
+        <div class="spacer"></div>
+        <div ng-show="vm.activeTab === 'flashcards'">
+            <div class="front-flashcard" ng-show="vm.showFront">
+                <!---
+                <div class=nav-cards>
+                    <button ng-click="vm.prevFlashcard()" class="bttn-prev">Previous</button>
+                    <button ng-click="vm.nextFlashcard()" class="bttn-next">Next</button>
+                </div>
+                --->
+                <div class="front-card-title">
+                    <h1 class="card-title">{{ vm.flashcard.title }}</h1>
+                    <p class="card-subtitle">{{ vm.flashcard.subtitle }}</p>
+                </div>
+                <div class="front-card-bottom">
+                    <div class="counter">
+                        <div class="counter-item viewed-lbl">
+                            <p class="count-par">Viewed: {{ vm.flashcard.counts.viewed }}</p>
+                        </div>
+                        <div class="counter-item incorrect-lbl">
+                            <p class="count-par">Incorrect: {{ vm.flashcard.counts.incorrect }}</p>
+                        </div>
+                        <div class="counter-item revisit-lbl">
+                            <p class="count-par">Revisit: {{ vm.flashcard.counts.revisit }}</p>
+                        </div>
+                        <div class="counter-item correct-lbl">
+                            <p class="count-par">Correct: {{ vm.flashcard.counts.correct }}</p>
+                        </div>
+                    </div>
+                    <div class="front-card-nav">
+                        <button ng-click="vm.prevFlashcard()" class="bttn-prev"><</button>
+                        <button ng-click="vm.flipCard()" class="bttn-flip-to-back">Flip</button>
+                        <button ng-click="vm.nextFlashcard()" class="bttn-next">></button>
+                    </div>
+                </div>
+            </div>
+            <div class="back-flashcard" ng-hide="vm.showFront">
+                <div class="back-card-title">
+                    <p class="card-title">{{ vm.flashcard.title }}</p>
+                </div>
+                <div class="back-card-details">
+                    <div class="back-card-entry" ng-repeat="detail in vm.flashcard.details">
+                        <dl class="details-list">
+                            <dt>{{ detail.title }}</dt>
+                            <dd>{{ detail.description }}</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="back-buttons">
+                    <div class="flip-button">
+                        <button ng-click="vm.flipCard()" class="bttn-flip-to-front">Flip</button>
+                    </div>
+                    <div class="counter-buttons">
+                        <button ng-click="vm.recordVisit('Incorrect')" class="incorrect-bttn">Incorrect</button>
+                        <button ng-click="vm.recordVisit('Revisit')" class="revisit-bttn">Revisit</button>
+                        <button ng-click="vm.recordVisit('Correct')" class="correct-bttn">Correct</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-show="vm.activeTab === 'reports'">
+            <div class="reports-cont">
+                <h2>Reports</h2>
+                <div class="spacer"></div>
+                <div class="summary-report">
+                    <table class="flashcard-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Visited</th>
+                                <th>Correct</th>
+                                <th>Revisit</th>
+                                <th>Incorrect</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="flashcard in vm.flashcards">
+                                <td>{{ flashcard.title }}</td>
+                                <td>{{ flashcard.counts.viewed }}</td>
+                                <td>{{ flashcard.counts.correct }}</td>
+                                <td>{{ flashcard.counts.revisit }}</td>
+                                <td>{{ flashcard.counts.incorrect }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

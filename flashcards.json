@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Private Cloud",
+    "details": [
+      { "title": "Definition", "description": "A private cloud is a cloud used by a single entity, providing greater control but with higher costs compared to public clouds." },
+      { "title": "Control", "description": "Offers much greater control for the company and its IT department." },
+      { "title": "Costs", "description": "Comes with greater cost and fewer benefits compared to public cloud deployments." },
+      { "title": "Hosting", "description": "Can be hosted from the company's on-site datacenter or in a dedicated offsite datacenter." },
+      { "title": "Example", "description": "VMware vSphere, OpenStack." }
+    ]
+  }
+  {
+    "title": "Test",
+    "details": [
+      { "title": "Definition", "description": "Test 1" },
+      { "title": "Control", "description": "Test 2" },
+      { "title": "Costs", "description": "Test 3" },
+      { "title": "Hosting", "description": "Test 4" },
+      { "title": "Example", "description": "Test 5" }
+    ]
+  }
+]

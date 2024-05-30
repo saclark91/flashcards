@@ -1,0 +1,491 @@
+/* Reset default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Apply flexbox to center content vertically */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+.spacer {
+    margin-bottom: 20px;
+}
+
+/* Custom styling for reports content */
+.reports-cont {
+    width: 1000px; /* You can adjust this width as needed */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.summary-report {
+    width: 950px; /* You can adjust this width as needed */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #000;
+    margin: 0 auto;
+}
+
+
+/* Custom styling for the tabs */
+.nav-tabs {
+    background-color: #f8f9fa; /* Background color */
+    border-bottom: 1px solid #dee2e6; /* Border bottom */
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+
+.nav-tabs li {
+    margin: 0 10px;
+}
+
+.nav-tabs a {
+    color: #007bff; /* Tab text color */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.nav-tabs a:hover {
+    background-color: #e9ecef; /* Hover background color */
+}
+
+.nav-tabs .active a {
+    background-color: #007bff; /* Active tab background color */
+    color: #fff; /* Active tab text color */
+    border-color: #007bff; /* Active tab border color */
+}
+
+/* Custom styling for tab content */
+.tab-content {
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-top: 0;
+    border-radius: 0 0 0.25rem 0.25rem;
+}
+
+
+
+.flashcard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.flashcard-table th, .flashcard-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #bbb;
+}
+
+.flashcard-table th {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+/* Alternating row background colors */
+.flashcard-table tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* Light gray for odd rows */
+}
+
+.flashcard-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* White for even rows */
+}
+
+
+
+
+
+
+.top-menu {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: right;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #000;
+}
+
+.report-bttn {
+    cursor: pointer;
+    width: 100px;
+    height: 35px;
+    border: 1px solid #e67e22;
+    text-align: center;
+    line-height: 35px; /* Ensure vertical alignment */
+    border-radius: 5px;
+    background-color: #e67e22;
+    color: #801800;
+    margin-right: 25px;
+}
+
+
+.front-flashcard {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 1000px; /* Set width to 1000px */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 250px;
+    margin: 0 auto; /* Center the flashcard horizontally */
+}
+
+.front-card-title {
+    margin-top: auto; /* Push title to the top */
+    margin-bottom: auto; /* Push title to the bottom */
+    width: 100%;
+    text-align: center; /* Center text */
+}
+
+.card-title {
+    margin: 0; /* Reset margin */
+    padding-bottom: 15px;
+}
+
+.card-subtitle {
+    margin: 0;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.flashcard ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.flashcard ul li {
+    margin-bottom: 10px;
+}
+
+.flashcard ul li strong {
+    font-weight: bold;
+}
+
+
+.back-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.buttons button {
+    width: 100px; /* Adjust the width as needed */
+}
+
+.back-card-details {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.details-list {
+    display: grid;
+    grid-template-columns: 25% 75%; /* Set the width of key and value columns */
+    gap: 5px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.details-list dt {
+    text-align: right; /* Align key column text to the right */
+    padding-right: 10px; /* Add some space to the right of key column text */
+    font-weight: bold;
+}
+
+.details-list dd {
+    text-align: left; /* Align value column text to the left */
+    padding-left: 10px; /* Add some space to the left of value column text */
+    overflow-wrap: break-word; /* Ensure long text wraps within the column */
+}
+
+.back-flashcard {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 1000px; /* Set width to 1000px */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 250px;
+    margin: 0 auto; /* Center the flashcard horizontally */
+}
+
+.back-detail {
+    margin: 5px 0px 5px 0px;
+    padding: 5px 0px 15px 0px;
+    width: 100%;
+}
+
+.back-card-details {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.back-card-entry {
+    width: 100%;
+}
+
+.key-column, .value-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.key-column ul, .value-column ul {
+    padding: 0;
+    margin: 0;
+}
+
+.key-column ul li, .value-column ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.back-card-title {
+    border-bottom: 1px solid #000;
+    width: 100%;
+    padding-bottom: 5px; /* Adjust as needed for spacing between title and border */
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+
+.front-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.counter {
+    display: flex;
+    flex-direction: row;
+}
+
+.counter-item {
+    margin-right: 10px;
+}
+
+.front-card-nav {
+    margin-left: 0;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+}
+
+/* Style for the "View" button */
+.button-view {
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    background-color: #3498db; /* Modern blue */
+    color: #fff;
+}
+
+/* Hover effect for the "View" button */
+.button-view:hover {
+    background-color: #2980b9; /* Darker shade of blue on hover */
+}
+
+.flip-button,
+.counter-buttons {
+    display: flex;
+}
+
+.bttn-flip-to-back {
+    background-color: #1abcbc; /* Modern teal color */
+    color: #004848; /* White text color */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bttn-flip-to-back:hover {
+    background-color: #16a0b9; /* Darker shade of teal on hover */
+}
+
+.bttn-flip-to-front {
+    background-color: #1abcbc; /* Teal color */
+    color: #004848; /* White text color */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bttn-flip-to-front:hover {
+    background-color: #16a0b9; /* Darker shade of teal on hover */
+}
+
+.counter-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
+
+.counter-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.count-right {
+    text-align: right;
+}
+
+.count-par {
+    cursor: default;
+    text-align: left;
+}
+
+
+/* Counter Labels*/
+.correct-lbl {
+    background-color: #2ecc71; /* Modern green */
+    color: #006029; /* Darker green text color */
+    min-width: 100px;
+}
+
+.revisit-lbl {
+    background-color: #f1c40f; /* Modern yellow */
+    color: #906b08; /* Darker yellow text color */
+    min-width: 100px;
+}
+
+.incorrect-lbl {
+    background-color: #e74c3c; /* Modern red */
+    color: #72070c; /* Darker red text color */
+    min-width: 100px;
+}
+
+.viewed-lbl {
+    background-color: #3498db; /* Modern blue */
+    color: #004078; /* Darker blue text color */
+    min-width: 100px;
+}
+
+/* Counter button styles */
+.correct-bttn {
+    background-color: #2ecc71; /* Modern green */
+    color: #006029; /* Darker green text color */
+    width: auto; /* Remove fixed width */
+    min-width: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+}
+
+.correct-bttn:hover {
+    background-color: rgba(0, 153, 53, 0.8); /* Darker shade of green on hover */
+}
+
+.revisit-bttn {
+    background-color: #f1c40f; /* Modern yellow */
+    color: #906b08; /* Darker yellow text color */
+    width: auto; /* Remove fixed width */
+    min-width: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+}
+
+.revisit-bttn:hover {
+    background-color: rgba(191, 146, 0, 0.8); /* Darker shade of yellow on hover */
+}
+
+.incorrect-bttn {
+    background-color: #e74c3c; /* Modern red */
+    color: #72070c; /* Darker red text color */
+    width: auto; /* Remove fixed width */
+    min-width: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+}
+
+.incorrect-bttn:hover {
+    background-color: rgba(182, 25, 0, 0.8); /* Darker shade of red on hover */
+}
+
+
+
+
+.nav-cards {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.bttn-prev,
+.bttn-next {
+    padding: 10px 10px;
+    margin: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 35px;
+    background-color: #e67e22;
+    color: #801800;
+    font-weight: bold;
+    text-align: center;
+}
+
+.bttn-prev:hover,
+.bttn-next:hover {
+    background-color: #d66822;
+}
